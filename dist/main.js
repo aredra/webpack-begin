@@ -1,3 +1,7 @@
+/**
+ *  Banner Plugin done
+ *  Build Date : 2020--4-12
+ */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};

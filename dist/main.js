@@ -1,6 +1,15 @@
 /**
  *  Banner Plugin done
- *  Build Date : 2020--4-12
+ *  Build Date : 2020-04-12
+ */
+/*!
+ * 
+ *       This is Banner Build Date : 2020-4-13 21:58:56
+ *       Commit Version : ab50b28
+ * 
+ *       Author: aredra
+ * 
+ *       
  */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -97,7 +106,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("console.log(math.sum(1, 3));\n\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("console.log(math.sum(1, 3));\n\nconsole.log(\"development\");\nconsole.log(\"http://api.dev.com\");\n\n\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ })
 

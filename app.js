@@ -2,5 +2,11 @@
 
 // new Promise();
 
-console.log()
-(function() {})()
+console.log(
+  "---------------------------Too Looooooooooooooong Setence------------------------------------------------- "
+);
+
+// eslint-disable-next-line no-unused-vars
+var foo = "";
+
+console.log();

@@ -5,11 +5,12 @@ const childProcess = require("child_process");
 const htmlWebpack = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const apiMocker = require("connect-api-mocker");
 
 module.exports = {
   mode: "development",
   entry: {
-    main: "./app.js",
+    main: ["./src/index.js", "./src/math.js"],
   },
   output: {
     path: path.resolve("./dist"),
@@ -19,6 +20,9 @@ module.exports = {
     overlay: true,
     port: 8080,
     stats: "errors-only",
+    before: (app) => {
+      app.use(apiMocker("/api", "mocks/api"));
+    },
   },
   module: {
     rules: [

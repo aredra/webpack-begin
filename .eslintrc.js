@@ -1,7 +1,9 @@
+/* eslint-disable no-undef */
 module.exports = {
   env: {
     browser: true,
     es6: true,
+    commonJS: true,
   },
   extends: [
     "eslint:recommended",

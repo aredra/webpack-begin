@@ -1,10 +1,10 @@
-const path = require('path');
-const MyWebpackPlugin = require('./my-webpack-plugin');
-const webpack = require('webpack');
-const childProcess = require('child_process');
-const htmlWebpack = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require("path");
+const MyWebpackPlugin = require("./my-webpack-plugin");
+const webpack = require("webpack");
+const childProcess = require("child_process");
+const htmlWebpack = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   mode: "development",
@@ -15,20 +15,22 @@ module.exports = {
     path: path.resolve("./dist"),
     filename: "[name].js",
   },
+  devServer: {
+    overlay: true,
+    port: 8080,
+    stats: "errors-only",
+  },
   module: {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
+        loader: "babel-loader",
+        exclude: /node_modules/,
       },
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
-      }
+        use: ["style-loader", "css-loader"],
+      },
     ],
   },
   plugins: [
@@ -56,12 +58,10 @@ module.exports = {
               removeComments: true,
             }
           : false,
-        
     }),
     new CleanWebpackPlugin(),
-    ...(process.env.NODE_ENV === 'production'
-     ? [new MiniCssExtractPlugin({filename: '[name].css'})]
-     : []
-    )
+    ...(process.env.NODE_ENV === "production"
+      ? [new MiniCssExtractPlugin({ filename: "[name].css" })]
+      : []),
   ],
 };

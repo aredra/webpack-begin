@@ -12,6 +12,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     .join("");
 });
 
+if (module.hot) {
+  console.log("HMR on");
+}
+
 console.log(process.env.NODE_ENV);
 
 console.log(
